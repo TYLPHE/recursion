@@ -12,7 +12,7 @@
       Fibonacci Sequence
     </h1>
     <label>Please enter a Fibonacci length: </label>
-    <input type="number" class="fib" value="3"/>
+    <input type="number" class="fib" value="5"/>
     <button class="fib-button">Go!</button>
     <div class="fib-seq-ans"></div>
     <pre class="feb-seq-code"></pre>
@@ -82,10 +82,7 @@
       }
 
       function fib(n) {
-        if (n < 3) {
-          if (n === 2) {
-            return 1;
-          }
+        if (n < 2) {
           return n;
         } else {
           return fib(n - 1) + fib(n - 2);
@@ -95,10 +92,7 @@
        // render element to page
       fibRecCode.textContent = `
         function fib(n) {
-          if (n < 3) {
-            if (n === 2) {
-              return 1;
-            }
+          if (n < 2) {
             return n;
           } else {
             return fib(n - 1) + fib(n - 2);
