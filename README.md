@@ -1,6 +1,6 @@
 # Recursion
-An exercise about the Fibbonacci sequence and merge sort
+An exercise about the Fibonacci sequence and merge sort
 
 ## [Link to assignment](https://www.theodinproject.com/lessons/javascript-recursion)
-## [Try Fibonacci sequence here](https://TYLPHE.github.io/recursion/fibbonacci/)
+## [Try Fibonacci here](https://TYLPHE.github.io/recursion/fibonacci/)
 ## [Try Merge Sort here](https://TYLPHE.github.io/recursion/merge-sort/)

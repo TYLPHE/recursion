@@ -12,7 +12,7 @@
       Fibonacci Sequence
     </h1>
     <label>Please enter a Fibonacci length: </label>
-    <input type="number" class="fib"/>
+    <input type="number" class="fib" value="3"/>
     <button class="fib-button">Go!</button>
     <div class="fib-seq-ans"></div>
     <pre class="feb-seq-code"></pre>
@@ -44,26 +44,31 @@
         b = c;
       }
 
+      // render element to page
       fibSeqCode.textContent = `
         function fibs(n) {
+          let arr = [];
           let a = 0;
           let b = 1;
           for (let i = 1; i <= n; i += 1) {
+            arr.push(a);
             let c = a + b;
             a = b;
             b = c;
           }
         }
       `
-      // render element to page
       answer = '';
-      for (let i = 1; i < arr.length; i += 1) {
-        if (i === 1) {
-          answer += `[0, ${arr[i]}, `;
+      for (let i = 0; i < arr.length; i += 1) {
+        if (i === 0) {
+          answer += `[${arr[i]}, `;
         } else if (i === arr.length - 1) {
           answer += `${arr[i]}]`;
         } else {
           answer += `${arr[i]}, `
+        }
+        if (arr[i] === 0 && arr.length === 1) {
+          answer = `[${arr[i]}]`
         }
       }
 
@@ -71,22 +76,29 @@
     }
 
     function fibsRec(n) {
-      let arr = [0, 1];
-      for (let i = 1; i < n - 1; i += 1) {
+      let arr = [];
+      for (let i = 0; i < n; i += 1) {
         arr.push(fib(i));
       }
 
       function fib(n) {
-        if (n <= 2) {
+        if (n < 3) {
+          if (n === 2) {
+            return 1;
+          }
           return n;
         } else {
           return fib(n - 1) + fib(n - 2);
         }
       }
- 
+
+       // render element to page
       fibRecCode.textContent = `
-        function fibsRec(n) {
-          if (n <= 2) {
+        function fib(n) {
+          if (n < 3) {
+            if (n === 2) {
+              return 1;
+            }
             return n;
           } else {
             return fib(n - 1) + fib(n - 2);
@@ -94,13 +106,16 @@
         }
       `
       answer = '';
-      for (let i = 1; i < arr.length; i += 1) {
-        if (i === 1) {
-          answer += `[0, ${arr[i]}, `;
+      for (let i = 0; i < arr.length; i += 1) {
+        if (i === 0) {
+          answer += `[${arr[i]}, `;
         } else if (i === arr.length - 1) {
           answer += `${arr[i]}]`;
         } else {
           answer += `${arr[i]}, `
+        }
+        if (arr[i] === 0 && arr.length === 1) {
+          answer = `[${arr[i]}]`
         }
       }
 
