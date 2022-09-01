@@ -37,7 +37,7 @@
       let arr = [];
       let a = 0;
       let b = 1;
-      for (let i = 1; i <= n; i += 1) {
+      for (let i = 0; i < n; i += 1) {
         arr.push(a);
         let c = a + b;
         a = b;
@@ -50,7 +50,7 @@
           let arr = [];
           let a = 0;
           let b = 1;
-          for (let i = 1; i <= n; i += 1) {
+          for (let i = 0; i < n; i += 1) {
             arr.push(a);
             let c = a + b;
             a = b;
@@ -75,23 +75,19 @@
       fibSeqAns.textContent = `Iteration: ${answer}`;
     }
 
+    
     function fibsRec(n) {
+      // Fibonacci function in one line
+      const fib = n => n < 2 ? n : fib(n - 1) + fib(n - 2);
+      
       let arr = [];
       for (let i = 0; i < n; i += 1) {
         arr.push(fib(i));
       }
-
-      function fib(n) {
-        if (n < 2) {
-          return n;
-        } else {
-          return fib(n - 1) + fib(n - 2);
-        }
-      }
-
+      
        // render element to page
       fibRecCode.textContent = `
-        function fib(n) {
+        function fibsRec(n) {
           if (n < 2) {
             return n;
           } else {
